@@ -1,0 +1,12 @@
+def labeler(dataset,dnCol):
+  dataset2=dataset.drop(dnCol,axis=1)
+  dict={}
+  for col in dataset2.columns:
+      if dataset2[col].dtype=='O':
+        dict[col]=encoder.fit_transform(dataset2[col])
+      else:
+        dict[col]=dataset2[col]
+  newdf=pd.DataFrame(dict)
+  return pd.concat([newdf,dataset[dnCol]],axis=1)
+
+labeler(df,'AHD')
