@@ -1,0 +1,31 @@
+def highCorrCols(dfprep,GeneralCol,precent):
+    list=[]
+    cols=dfprep.columns
+    for col in cols:
+        if ((dfprep[col].dtype!='O') and (col != GeneralCol)):
+            if dfprep[col].corr(df[GeneralCol])>=precent:
+               list.append(col)
+    return list
+highCorrCols(df,'diagnosis',0.5)
+
+#high corr columns returner function
+
+highCorrCols(df,'diagnosis',0.5)
+
+#outputs is this
+
+['radius_mean',
+ 'perimeter_mean',
+ 'area_mean',
+ 'compactness_mean',
+ 'concavity_mean',
+ 'concave points_mean',
+ 'radius_se',
+ 'perimeter_se',
+ 'area_se',
+ 'radius_worst',
+ 'perimeter_worst',
+ 'area_worst',
+ 'compactness_worst',
+ 'concavity_worst',
+ 'concave points_worst']
