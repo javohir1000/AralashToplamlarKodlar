@@ -1,17 +1,62 @@
+def zipper(value):
+    l=len(value)
+    nums=list(range(l))
+    dict={}
+    for num in nums:
+        dict[value[num]]=num
+    return dict
+ -------------------------------
+zipper(np.unique(df['Sex']))
+//output is {'male':1,'female':2,'child':0}
+
+---------------------------
 def replacer(dfn):
-    uniqlist=dfn.unique()
-    alpha=dict(zip(ulist,range(len(uniqlist))))
+    ulist=dfn.unique()
+    alpha=zipper(ulist)
+    
     list=[]
-    newdict={}
+    
     for el in dfn:
         val=alpha[el]
         list.append(val)
     
-    newdict[dfn.name]={}
-    newdict[dfn.name]=list
-    return newdict
+    
+   
+    return list
+ //output is [1,2,1,1,2,0,0,1,]
+ 
+ -------------------------------
+ 
+ def labeler(dataset,GenCol):
+  dataset2=dataset.drop(GenCol,axis=1)
+  dict={}
 
-replacer(df['BP'])
+  for col in dataset2.columns:
+      if dataset2[col].dtype=='O':
+        dict[col]=replacer(dataset2[col])
+      else:
+        dict[col]=dataset2[col]
+
+  newdf=pd.DataFrame(dict)
+  return pd.concat([newdf,dataset[GenCol]],axis=1)
+
+df=labeler(df,'Drug')
+df
 
 
-# result looks like this {'BP': [0,1,2,3,1,2,0,1]}
+	Age	Sex	BP	Cholesterol	Na_to_K	Drug
+0	23	0	0	0	25.355	drugY
+1	47	1	1	0	13.093	drugC
+2	47	1	1	0	10.114	drugC
+3	28	0	2	0	7.798	drugX
+4	61	0	1	0	18.043	drugY
+...	...	...	...	...	...	...
+195	56	0	1	0	11.567	drugC
+196	16	1	1	0	12.006	drugC
+197	52	1	2	0	9.894	drugX
+198	23	1	2	1	14.020	drugX
+199	40	0	1	1	11.349	drugX
+
+
+
+
