@@ -1,0 +1,15 @@
+function rangerRev(numGeneral,numBase,step){
+       numlist=[]
+       numLemp=numGeneral
+       while (numBase<=numGeneral){
+           numlist.push(numLemp)
+           numLemp-=step
+           numBase+=step
+       }
+       return numlist
+    
+}
+l=rangerRev(20,10,2)
+console.log(l)
+
+output is // [ 20, 18, 16, 14, 12, 10 ]
