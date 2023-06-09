@@ -2,7 +2,7 @@ def highCorrCols(dfprep,GeneralCol,precent):
     list=[]
     cols=dfprep.columns
     for col in cols:
-        if ((dfprep[col].dtype!='O') and (col != GeneralCol)):
+        if (dfprep[col].dtype!='O'): #and (col != GeneralCol)
             if dfprep[col].corr(df[GeneralCol])>=precent:
                list.append(col)
     return list
