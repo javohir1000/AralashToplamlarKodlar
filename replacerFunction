@@ -1,0 +1,17 @@
+def replacer(dfn):
+    uniqlist=dfn.unique()
+    alpha=dict(zip(ulist,range(len(uniqlist))))
+    list=[]
+    newdict={}
+    for el in dfn:
+        val=alpha[el]
+        list.append(val)
+    
+    newdict[dfn.name]={}
+    newdict[dfn.name]=list
+    return newdict
+
+replacer(df['BP'])
+
+
+# result looks like this {'BP': [0,1,2,3,1,2,0,1]}
