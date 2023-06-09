@@ -3,7 +3,7 @@ def highCorrCols(dfprep,GeneralCol,precent):
     cols=dfprep.columns
     for col in cols:
         if (dfprep[col].dtype!='O'): #and (col != GeneralCol)
-            if dfprep[col].corr(df[GeneralCol])>=precent:
+            if np.abs(dfprep[col].corr(df[GeneralCol]))>=precent:
                list.append(col)
     return list
 highCorrCols(df,'diagnosis',0.5)
