@@ -5,11 +5,11 @@ def zipper(value):
     for num in nums:
         dict[value[num]]=num
     return dict
- -------------------------------
+#-------------------------------
 zipper(np.unique(df['Sex']))
-//output is {'male':1,'female':2,'child':0}
+#//output is {'male':1,'female':2,'child':0}
 
----------------------------
+#---------------------------
 def replacer(dfn):
     ulist=dfn.unique()
     alpha=zipper(ulist)
@@ -23,9 +23,9 @@ def replacer(dfn):
     
    
     return list
- //output is [1,2,1,1,2,0,0,1,]
+ #//output is [1,2,1,1,2,0,0,1,]
  
- -------------------------------
+ #-------------------------------
  
  def labeler(dataset,GenCol):
   dataset2=dataset.drop(GenCol,axis=1)
