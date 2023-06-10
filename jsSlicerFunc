@@ -1,0 +1,17 @@
+function slicer(data,num1,num2,step){
+         sliced_data=''
+         fn=num1
+         sn=num2
+         while (fn<=sn){
+             sliced_data+=data[fn]
+             fn+=step
+         }
+         return sliced_data
+         
+    
+}
+
+
+
+result=slicer('salomalekum',0,4,1)
+console.log(result) //salom
