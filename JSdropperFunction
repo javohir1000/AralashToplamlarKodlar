@@ -1,0 +1,17 @@
+function dropper(str,num1,num2){
+    res=''
+    for(i=0;i<str.length;i++){
+        if(i>=num1 && i<num2){
+            continue
+        }
+        else{
+            res+=str[i]
+        }
+    }
+    return res
+    
+    
+}
+console.log(dropper('salom',0,2))
+
+//output is : lom
