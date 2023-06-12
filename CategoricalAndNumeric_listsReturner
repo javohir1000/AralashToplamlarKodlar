@@ -1,0 +1,16 @@
+def funny(dset):
+    categ=[]
+    numer=[]
+    cols=dset.columns
+    for col in cols:
+        if dset[col].dtype=='O':
+           categ.append(col)
+        else:
+            numer.append(col)
+
+    return categ,numer
+nestedList=funny(test_data)
+print(nestedList[0])
+print(nestedList[1])
+# ['airline', 'flight', 'source_city', 'departure_time', 'stops', 'arrival_time', 'destination_city', 'class']
+# ['duration', 'days_left']
