@@ -1,0 +1,17 @@
+function subStringer(str,num1,num2){
+         res=""
+         if(str.length>num2){
+             
+             res+=str.slice(num1,num2)
+             
+         }
+         else{
+             res+=str 
+         }
+       console.log(res)
+         
+    
+}
+
+subStringer('helloha',0,4)//hell
+subStringer('leo',0,4)//leo
