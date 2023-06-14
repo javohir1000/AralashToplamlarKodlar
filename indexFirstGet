@@ -1,0 +1,15 @@
+function firstIndexGetter(str,target){
+         idx=0
+         for(n in str){
+             if(str[n]==target){
+                idx=n
+                break
+             }
+         }
+         return idx
+        
+       
+    
+}
+
+console.log(firstIndexGetter('axaaaxa','x')) // 1
