@@ -1,0 +1,39 @@
+function slicerUniversal(str,num1,num2){
+          text=''
+          if(num1 <0 && num2<0){
+               num1=str.length-Math.abs(num1)
+               num2=str.length-Math.abs(num2)
+               s=0;
+              while(s<=str.length){
+                  if(s>=num1 && s<num2){
+                  text+=str[s]
+                  }   
+                  s+=1
+              }
+               
+          }
+          else if(num1 <0 && num2==0){
+                 num1=str.length-Math.abs(num1)
+                 s=0;
+                 while(s<str.length){
+                      if(s>=num1){
+                      text+=str[s]
+                      }   
+                 s+=1
+           }
+          }
+          else{
+              s=0;
+          while(s<str.length){
+              if(s>=num1 && s<num2){
+                  text+=str[s]
+              }   
+             s+=1
+          }
+          }
+          return text
+          
+           
+}
+
+console.log(slicer('aloomamma',-3,0))//mma //for lower than zero or bigger than zero numbers
