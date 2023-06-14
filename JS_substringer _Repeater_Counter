@@ -28,3 +28,17 @@ function repeater(string,n){
     
 }
 repeater('hel',4)//helhelhelhel
+
+
+function counter(str,pred){
+         count=0;
+         for(el of str){
+             if (el == pred){
+                 
+                 count+=1
+             }
+         }
+         return count
+}
+
+counter('xaasadad',a)//result is: 4
