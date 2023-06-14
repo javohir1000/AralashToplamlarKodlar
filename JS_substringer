@@ -15,3 +15,16 @@ function subStringer(str,num1,num2){
 
 subStringer('helloha',0,4)//hell
 subStringer('leo',0,4)//leo
+
+
+function repeater(string,n){
+         text=''
+         i=0;
+         while(i<n){
+             text+=string
+             i+=1
+         }
+         return text
+    
+}
+repeater('hel',4)//helhelhelhel
