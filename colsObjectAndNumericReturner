@@ -1,0 +1,11 @@
+ef colsReturner(df):
+     numerial=[]
+     nonnumerial=[]
+     cols=df.columns
+     for col in cols:
+         if df[col].dtype=='O':
+             nonnumerial.append(col)
+         else:
+             numerial.append(col)
+     return numerial,nonnumerial
+     
