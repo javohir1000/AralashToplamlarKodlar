@@ -1,15 +1,4 @@
-def labeler(dataset,):
-  
-  dict={}
-  for col in dataset.columns:
-      if dataset[col].dtype=='O':
-        dict[col]=encoder.fit_transform(dataset[col])
-      
-  newdf=pd.DataFrame(dict)
-  return newdf
 
-labeler(test_data)
-//new
 
 
 
