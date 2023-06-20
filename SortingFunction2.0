@@ -1,0 +1,53 @@
+arr=[1,2,100, 40, 34, 57, 29, 72, 57, 88,100]
+
+    
+
+
+
+def Bale(arr):
+    bigNum=arr[0]
+    
+   
+    bigNums=[]
+    others=[]
+    for i in range(len(arr)):
+        if arr[i]>=bigNum:
+           bigNum=arr[i]
+    for i in range(len(arr)):
+        if arr[i]==bigNum:
+            bigNums.append(arr[i])
+        else:
+            others.append(arr[i])
+    return bigNums,others
+        
+def sorting(arr):
+    taxt=[]
+    for i in range(len(arr)):
+        nums,others=Bale(arr)
+        if others:
+            arr=others
+            for n in nums:
+                taxt.append(n)
+        else:
+            break
+    return taxt
+print(sorting(arr))
+    
+    
+    
+        
+    
+        
+            
+           
+              
+             
+    
+    
+    
+   
+
+
+        
+    
+
