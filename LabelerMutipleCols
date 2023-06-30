@@ -1,3 +1,13 @@
+def isNaN(elem):
+    x=''
+    x+=f"{elem}"
+    if x=='nan':
+      return True
+    else:
+      return False
+    
+#isNaN(arr[0])
+
 def uniqueList(arr):
   list=[]
   for el in arr:
