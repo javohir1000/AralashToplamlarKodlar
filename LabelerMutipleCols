@@ -12,6 +12,9 @@ def uniqueList(arr):
 def dicter(List):
     dict={}
     for i in range(len(List)):
+       if isNaN(List[i]):
+        dict[List[i]]=List[i]
+       else:
         dict[List[i]]=i
     return dict
 
