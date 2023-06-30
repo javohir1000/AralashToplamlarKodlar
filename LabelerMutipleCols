@@ -1,0 +1,46 @@
+def uniqueList(arr):
+  list=[]
+  for el in arr:
+    if el in list:
+      continue
+    else:
+      list.append(el)
+  return list
+
+
+
+def dicter(List):
+    dict={}
+    for i in range(len(List)):
+        dict[List[i]]=i
+    return dict
+
+
+def labeling(dset,targetcol):
+    cols=[]
+    cat_cols=[]
+    for col in dset.columns.drop(targetcol):
+        if dset[col].dtype=='O' :
+           cols.append(col)
+        else:
+          cat_cols.append(col)
+
+
+
+    generalPart={}
+    for col in cols:
+        arr=dset[col].to_numpy()
+        list=uniqueList(arr)
+        dict=dicter(list)
+        foot=[]
+
+        for el in arr:
+            foot.append(dict[el])
+        generalPart[col]=foot
+    for ccol in cat_cols:
+        generalPart[ccol]=dset[ccol].to_numpy()
+    generalPart[targetcol]=dset[targetcol]
+    return pd.DataFrame(generalPart)
+
+df=labeling(df,'AHD')
+df.head()
