@@ -1,0 +1,28 @@
+datas=[1,2,8,5,6,7,2,2,3,4,5,6]
+
+def maxim(arr):
+  num=arr[0]
+  
+  list=[]
+  for el in arr:
+    if num<el:
+       num=el
+    else:
+      continue
+  
+  return num
+def plot(datas):
+    b=''
+    for k in range(maxim(datas)):
+        hub=''
+        p=maxim(datas)
+        for i in range(len(datas)):
+            if datas[i]==p:
+               hub+='* '
+               datas[i]=datas[i]-1
+    
+       
+            else:
+               hub+='  '
+        b+='\n'+hub
+    return b   
