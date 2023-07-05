@@ -1,0 +1,77 @@
+
+
+def itHasError(data,tip):
+    new=[]
+    if tip=='float':
+    
+      
+       for el in data:
+          try:
+             if type(float(el))==float:
+                new.append(float(el))
+          except ValueError:
+                new.append(np.nan)
+      
+
+    elif tip =='int':
+       
+       for el in data:
+          try:
+             if type(int(el))==int:
+                new.append(int(el))
+          except ValueError:
+                new.append(np.nan)
+        
+
+    return np.array(new)
+# itHasError(df['TotalCharges'].values,'float')
+
+
+
+
+
+def isClass(value):
+    value=str(value)
+    
+    
+    for el in value:
+        if el == '.':
+          return 'float'
+    return 'int'
+# isClass('10.0')
+
+def vov(dataset):
+    cols=dataset.columns
+
+    dict={}
+    for col in cols:
+       value=dataset[col][1 | 0]
+       try:
+         
+          if type(float(value))==float:
+             gog=isClass(value) 
+             
+             
+                    
+             dict[col]={}
+             arr=dataset[col].values
+             #  arr=arr.astype(gog)
+
+             newArr=itHasError(arr,gog)
+             dict[col]=newArr
+             
+       except ValueError:
+             dict[col]={}
+             arr=dataset[col].values
+            
+             dict[col]=arr
+    return dict
+result=vov(df)
+# res['list_price']['datas']
+# res['product_id']        
+df2=pd.DataFrame(result)      
+
+           
+           
+            
+            
