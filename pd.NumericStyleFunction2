@@ -1,0 +1,41 @@
+def isClass(value):
+    value=str(value)
+    
+    
+    for el in value:
+        if el == '.':
+          return 'float'
+    return 'int'
+# isClass('10.0')
+
+def vov(dataset):
+    cols=dataset.columns
+
+    dict={}
+    for col in cols:
+       value=dataset[col][1 | 0]
+       try:
+         
+          if type(float(value))==float:
+             gog=isClass(value) 
+             
+                    
+             dict[col]={}
+             arr=dataset[col].values
+             arr=arr.astype(gog)
+             dict[col]=arr
+             
+       except ValueError:
+             dict[col]={}
+             arr=dataset[col].values
+            
+             dict[col]=arr
+    return dict
+result=vov(df)
+# res['list_price']['datas']
+# res['product_id']        
+pd.DataFrame(result)      
+           
+           
+            
+            
